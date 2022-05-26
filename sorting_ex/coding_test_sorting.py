@@ -54,3 +54,52 @@ def insertion_sort(): # 삽입 정렬 예제, 164
     삽입 정렬은 리스트의 0번째 인덱스는 그 자체로 정렬되어 있다고 판단한다.  
     두번째 인덱스의 데이터가 좌, 우 중 어느 위치로 들어갈지 판단한다. 
     '''
+
+
+def quick_sort(array, start, end): # 퀵 정렬 예제, 16
+    # array = [5, 7, 9, 0, 3, 1, 6, 2, 4, 8]
+    # quick_sort(array, 0, 9)
+    if start >= end:
+
+        return
+
+    pivot = start # 0
+    left = start + 1 # 1
+    right = end # 8
+
+    while left <= right:
+        # print(array[left])
+        # 피벗 보다 큰 데이터를 찾을 때까지 반복
+        while left <= end and array[left] <= array[pivot]: # 1, 8 and array[1], array[0] -> 7, 5
+
+            left += 1
+            print('left', left)
+            print(input('left debug'))
+
+        # 피벗 보다 작은 데이터를 찾을 때까지 반복
+        while right > start and array[right] >= array[pivot]:
+            # print(array[right])
+            right -= 1
+            print('right', right)
+            print(input('right debug'))
+
+        if left > right:
+            array[right], array[pivot] = array[pivot], array[right]
+        else:
+            array[left], array[right] = array[right], array[left]
+
+    quick_sort(array, start, right -1)
+    quick_sort(array, right + 1, end)
+
+    '''
+    위의 예제 정렬 알고리즘보다 많이 쓰이는 알고리즘으로서, 기준 데이터를 설정하고 그 기준보다 큰 데이터와 작은 데이터의 위치를 바꾸는 정렬 알고리즘이다.
+    피벗(pivot)은 큰 숫자와 작은 숫자를 교환할 때, 기준이 되는 숫자로서, 퀵 정렬 수행 전 피벗을 먼저 명시하여야 한다.
+    위의 예제는 가장 대표적인 피벗 분할 방식인 호어 분할방식을 기준으로 하여 작성되었다.
+    
+    호어 분할 : 리스트에서 첫 번째 데이터를 피벗으로 지정한다. 
+    '''
+
+
+
+
+
