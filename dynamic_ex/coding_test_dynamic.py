@@ -4,7 +4,7 @@ Dynamic Programming
 따라서 연산속도와 메모리 공간을 최대한으로 활용할 수 있는 효율적인 알고리즘을 작성하여야 한다.
 어떤 문제는 메모리 공간을 약간 더 사용하면 연산 속도를 비약적으로 증가시킬 수 있는데,
 그 중 대표적인 방법을 Dynamic Programming (동적 계획법) 이라 한다.
-Dynamic Programming 의 2가지 방식인 탑다운과 바텀업을 다뤄 볼 것이며, 자주 사용 되는 메모이제이션 기법까지 알아 볼 것이다.
+Dynamic Programming 의 2가지 방식인 Top-Down과 Bottom-Up을 다뤄 볼 것이며, 자주 사용 되는 메모이제이션 기법까지 알아 볼 것이다.
 '''
 
 def fibo(x): # 피보나치 함수 예시
@@ -20,7 +20,7 @@ f(6) 일 때, fibo(3) 이 총 세번 호출되는데 이 처럼 이미 계산한
 '''
 d = [0] * 100
 
-def recursive_fibo(x):
+def memoization_fibo(x):
     print(f'f({str(x)})', end=' ')
     if x == 1 or x == 2:
         return 1
@@ -28,7 +28,16 @@ def recursive_fibo(x):
     if d[x] != 0:
         return d[x]
 
-    d[x] = recursive_fibo(x - 1) + recursive_fibo(x - 2)
+    d[x] = memoization_fibo(x - 1) + memoization_fibo(x - 2)
     return d[x]
 
-print(recursive_fibo(99))
+# print(memoization_fibo(99))
+
+'''
+다이나믹 프로그래밍을 적용했을 때의 피보나치 수열 알고리즘의 시간 복잡도는 O(N)이 된다.
+f(1)을 구한 다음 그 값이 f(2)를 구하는데 사용되고, 또 그값이 f(3)을 구하는데 사용되는 방식으로 이어지기 때문이다.
+한 번 구한 결과는 다시 구해지지 않는다.
+출력문과 함께 현재의 피보나치 수의 출력값을 확인하면 알 수 있다.
+이처럼 재귀 함수를 이용하여 작성하는 다이나믹 프로그래밍 소스코드를, 큰 문제를 해결하기 위해 작은 문제를 호출한다고 하여 Top-Down 방식이라고 한다.
+반면, 반복문을 이용하여 소스코드를 작성하는 경우 작은 문제부터 차근차근 답을 도출한다고 하여 Bottom-Up 방식이라고 한다.
+'''

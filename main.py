@@ -52,5 +52,12 @@ start_time_log = time.time()
 # print(dynamic_example.recursive_fibo(99, d))
 import dynamic_ex.coding_test_dynamic as dynamic_example
 
+logic_flag = dynamic_example.answer_logic()
+if logic_flag is True:
+    print('good')
+else:
+    print('bad')
+
 end_time_log = time.time()
 print(f'수행 시간 : {end_time_log - start_time_log}')
+
