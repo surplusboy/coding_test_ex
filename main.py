@@ -50,13 +50,10 @@ start_time_log = time.time()
 # 다이나믹 프로그래밍 연습
 
 # print(dynamic_example.recursive_fibo(99, d))
-import dynamic_ex.coding_test_dynamic as dynamic_example
+# import dynamic_ex.coding_test_dynamic as dynamic_example
 
-logic_flag = dynamic_example.answer_logic()
-if logic_flag is True:
-    print('good')
-else:
-    print('bad')
+# 파이썬의 삼항연산자, True 일때 output if 조건식 else False 일때 output
+print('응애몬은 귀여워' if 1 == 2 else '응애몬은 안귀여워')
 
 end_time_log = time.time()
 print(f'수행 시간 : {end_time_log - start_time_log}')
