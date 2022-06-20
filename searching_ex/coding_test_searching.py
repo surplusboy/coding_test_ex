@@ -50,3 +50,9 @@ def iteration_binary_search(array, target, start, end):
 
 트리 자료구조와 이진 탐색 트리에 대해 좀 더 알아볼 것
 '''
+
+'''
+코딩 테스트에서 입력받을 데이터의 수가 많을 때에는 input() 함수를 사용하면 시간초과가 뜰 수 있으므로
+sys 라이브러리의 readline() 함수를 사용하자.
+realine() 함수는 \n 의 줄 바꿈 기호가 기본적으로 입력되니 rstrip() 으로 최우측 문자열을 지우자
+'''
